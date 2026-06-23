@@ -204,7 +204,7 @@ body { background:var(--deep); color:var(--white); font-family:var(--body); font
 .hf-eyebrow {
   font-family:var(--mono); font-size:.6rem;
   letter-spacing:.18em; text-transform:uppercase;
-  color:rgba(0,0,0,.45); display:block; margin-bottom:14px;
+  color:#000; font-weight:600; display:block; margin-bottom:14px;
 }
 .hf-eyebrow i { color:var(--orange); }
 
@@ -243,7 +243,7 @@ body { background:var(--deep); color:var(--white); font-family:var(--body); font
 .hf-cat {
   display:flex; flex-direction:column;
   align-items:center; justify-content:center;
-  gap:9px; padding:20px 10px;
+  gap:9px; padding:22px 10px 26px;
   background:#f7f7f8;
   border:1.5px solid rgba(0,0,0,.08);
   color:#333; cursor:pointer;
