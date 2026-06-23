@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tratamiento de Datos Personales — Damer Producciones</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange:#FF5200;
+      --deep:#0c0c0e;
+      --surface:#131316;
+      --white:#F8F6F0;
+      --muted:rgba(248,246,240,.58);
+      --border:rgba(255,82,0,.22);
+      --display:'Barlow Condensed', sans-serif;
+      --body:'Barlow', sans-serif;
+      --mono:'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:var(--deep);
+      color:var(--white);
+      font-family:var(--body);
+      font-size:1rem;
+      line-height:1.7;
+      min-height:100vh;
+    }
+
+    header {
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      padding:20px 5%;
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    header img { height:48px; }
+    header a {
+      font-family:var(--mono);
+      font-size:.62rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--orange);
+      text-decoration:none;
+      margin-left:auto;
+    }
+    header a:hover { text-decoration:underline; }
+
+    .page-wrap {
+      max-width:780px;
+      margin:0 auto;
+      padding:64px 5% 96px;
+    }
+
+    .eyebrow {
+      font-family:var(--mono);
+      font-size:.6rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--orange);
+      display:block;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      font-family:var(--display);
+      font-weight:900;
+      font-size:clamp(2.2rem,5vw,3.2rem);
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      line-height:1;
+      margin-bottom:10px;
+    }
+
+    .updated {
+      font-family:var(--mono);
+      font-size:.6rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:48px;
+      display:block;
+    }
+
+    .divider {
+      width:40px;
+      height:3px;
+      background:var(--orange);
+      margin:0 0 48px;
+    }
+
+    h2 {
+      font-family:var(--display);
+      font-weight:800;
+      font-size:1.35rem;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:var(--white);
+      margin:40px 0 14px;
+    }
+
+    p { color:var(--muted); margin-bottom:14px; }
+
+    ul {
+      color:var(--muted);
+      padding-left:20px;
+      margin-bottom:14px;
+    }
+    ul li { margin-bottom:6px; }
+
+    strong { color:var(--white); font-weight:600; }
+
+    .highlight-box {
+      background:rgba(255,82,0,.08);
+      border:1px solid rgba(255,82,0,.28);
+      border-left:4px solid var(--orange);
+      padding:18px 22px;
+      margin:28px 0;
+    }
+    .highlight-box p { margin:0; color:var(--white); }
+
+    a { color:var(--orange); }
+
+    footer {
+      text-align:center;
+      padding:32px 5%;
+      border-top:1px solid var(--border);
+      font-family:var(--mono);
+      font-size:.6rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html"><img src="logo.png" alt="Damer Producciones"></a>
+  <a href="index.html">← Volver al inicio</a>
+</header>
+
+<div class="page-wrap">
+  <span class="eyebrow">Legal · Privacidad</span>
+  <h1>Política de Tratamiento<br>de Datos Personales</h1>
+  <span class="updated">Última actualización: junio 2025</span>
+  <div class="divider"></div>
+
+  <div class="highlight-box">
+    <p>Este documento da cumplimiento a la <strong>Ley 1581 de 2012</strong> y al <strong>Decreto 1377 de 2013</strong> de la República de Colombia, sobre protección de datos personales.</p>
+  </div>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <p><strong>Damer Producciones</strong><br>
+  Cali, Valle del Cauca, Colombia<br>
+  Contacto: <a href="https://wa.me/573014734572">+57 301 473 4572</a></p>
+
+  <h2>2. Datos que recopilamos</h2>
+  <p>A través de nuestros formularios de cotización recopilamos:</p>
+  <ul>
+    <li>Nombre completo</li>
+    <li>Número de teléfono / WhatsApp</li>
+    <li>Correo electrónico</li>
+    <li>Información del evento (tipo, fecha, lugar, descripción)</li>
+  </ul>
+
+  <h2>3. Finalidades del tratamiento</h2>
+  <p>Los datos recopilados serán usados exclusivamente para:</p>
+  <ul>
+    <li>Atender y responder su solicitud de cotización</li>
+    <li>Contactarle para brindar información de nuestros servicios</li>
+    <li>Enviar confirmaciones y comunicaciones relacionadas con su evento</li>
+    <li>Mejorar la calidad de nuestros servicios</li>
+  </ul>
+
+  <h2>4. Derechos del titular</h2>
+  <p>Como titular de sus datos personales, usted tiene derecho a:</p>
+  <ul>
+    <li><strong>Conocer</strong> los datos que tenemos sobre usted</li>
+    <li><strong>Actualizar</strong> o <strong>rectificar</strong> información inexacta</li>
+    <li><strong>Solicitar la supresión</strong> de sus datos de nuestros registros</li>
+    <li><strong>Revocar</strong> la autorización de tratamiento en cualquier momento</li>
+    <li><strong>Oponerse</strong> al tratamiento de sus datos</li>
+  </ul>
+  <p>Para ejercer cualquiera de estos derechos, contáctenos por WhatsApp al <a href="https://wa.me/573014734572">+57 301 473 4572</a>.</p>
+
+  <h2>5. Almacenamiento y seguridad</h2>
+  <p>Sus datos son almacenados en sistemas seguros de Google (Google Sheets / Gmail) y no son compartidos con terceros sin su consentimiento, salvo obligación legal.</p>
+
+  <h2>6. Tiempo de conservación</h2>
+  <p>Conservamos sus datos durante el tiempo necesario para prestar el servicio solicitado y por un máximo de <strong>2 años</strong> después, salvo que usted solicite su eliminación antes.</p>
+
+  <h2>7. Transferencia a terceros</h2>
+  <p>Damer Producciones <strong>no vende, alquila ni cede</strong> sus datos personales a terceros con fines comerciales.</p>
+
+  <h2>8. Uso de cookies</h2>
+  <p>Este sitio web no utiliza cookies de rastreo ni tecnologías de seguimiento publicitario.</p>
+
+  <h2>9. Modificaciones</h2>
+  <p>Nos reservamos el derecho de actualizar esta política. Cualquier cambio será publicado en esta página con la fecha de actualización.</p>
+
+  <h2>10. Aceptación</h2>
+  <p>Al diligenciar y enviar el formulario de cotización en nuestro sitio web, usted declara haber leído y aceptado esta política de tratamiento de datos personales.</p>
+
+  <div class="highlight-box" style="margin-top:40px;">
+    <p>¿Preguntas sobre el manejo de sus datos? Escríbanos por <a href="https://wa.me/573014734572">WhatsApp</a> y le respondemos en menos de 24 horas.</p>
+  </div>
+</div>
+
+<footer>
+  © 2025 Damer Producciones · Cali, Colombia · Todos los derechos reservados
+</footer>
+
+</body>
+</html>

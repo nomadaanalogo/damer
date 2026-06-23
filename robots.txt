@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Indica la ubicación del sitemap para los motores de búsqueda
+Sitemap: https://www.damerproducciones.com/sitemap.xml
