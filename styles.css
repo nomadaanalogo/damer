@@ -644,7 +644,7 @@ section { padding:96px 5%; position:relative; }
 /* ══════════════════════════════
    COBERTURA — foto ciudad fondo
 ══════════════════════════════ */
-.cobertura-section { position:relative; padding:80px 5%; overflow:hidden; }
+.cobertura-section { position:relative; padding:80px 5%; overflow:hidden; content-visibility:auto; contain-intrinsic-size:0 500px; }
 
 .cob-bg {
   position:absolute; inset:0;
@@ -689,7 +689,7 @@ section { padding:96px 5%; position:relative; }
 /* ══════════════════════════════
    GALERÍA — grid asimétrica
 ══════════════════════════════ */
-.gallery-section { padding:96px 5%; }
+.gallery-section { padding:96px 5%; content-visibility:auto; contain-intrinsic-size:0 600px; }
 
 .gallery-grid {
   display:grid;
@@ -842,7 +842,7 @@ a.contact-info-val:hover { color:var(--orange); }
 /* ══════════════════════════════
    FOOTER
 ══════════════════════════════ */
-.footer { padding:56px 5% 36px; border-top:1px solid var(--border); background:var(--surface); }
+.footer { padding:56px 5% 36px; border-top:1px solid var(--border); background:var(--surface); content-visibility:auto; contain-intrinsic-size:0 400px; }
 .footer-top { display:flex; justify-content:space-between; align-items:flex-start; gap:48px; flex-wrap:wrap; margin-bottom:44px; }
 .footer-brand p { color:var(--muted); font-size:.83rem; max-width:260px; line-height:1.75; margin-top:12px; font-weight:300; }
 .footer-links-col h4 { font-family:var(--mono); font-size:.6rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--orange); margin-bottom:18px; }

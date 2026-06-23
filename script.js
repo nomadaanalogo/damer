@@ -12,7 +12,7 @@ function enviarASheet(data) {
 
 // ─── NAVBAR SCROLL ───
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 60));
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 60), { passive: true });
 
 // ─── HAMBURGER / MOBILE MENU ───
 const hamburger   = document.getElementById('hamburger');
@@ -61,8 +61,9 @@ const hfSendB = document.getElementById('hfSend');
 
 function hfAnimate(el) {
   el.style.animation = 'none';
-  el.offsetHeight;
-  el.style.animation = 'hfSlide .28s ease forwards';
+  requestAnimationFrame(() => {
+    el.style.animation = 'hfSlide .28s ease forwards';
+  });
 }
 
 function hfRender() {
@@ -175,7 +176,7 @@ function hf2Render() {
   Object.entries(hf2Panels).forEach(([s, el]) => {
     const isActive = parseInt(s) === hf2Step;
     el.hidden = !isActive;
-    if (isActive) { el.style.animation='none'; el.offsetHeight; el.style.animation='hfSlide .28s ease forwards'; }
+    if (isActive) { el.style.animation='none'; requestAnimationFrame(() => { el.style.animation='hfSlide .28s ease forwards'; }); }
   });
   hf2Dots.forEach((d, i) => {
     d.classList.toggle('hf-active', i + 1 === hf2Step);
