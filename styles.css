@@ -189,7 +189,7 @@ body { background:var(--deep); color:var(--white); font-family:var(--body); font
   box-shadow:0 8px 40px rgba(0,0,0,.12), 0 2px 8px rgba(255,82,0,.08);
 }
 
-#cotizar-form, #cotizar-form-2 { scroll-margin-top:96px; }
+#cotizar-form, #cotizar-form-2, #cotiza-ahora { scroll-margin-top:96px; }
 
 .hf-card-title {
   font-family:var(--display); font-weight:900;
