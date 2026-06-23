@@ -141,7 +141,7 @@ body { background:var(--deep); color:var(--white); font-family:var(--body); font
     radial-gradient(ellipse at 8% 92%,  rgba(255,82,0,.22)  0%, transparent 42%),
     radial-gradient(ellipse at 92% 8%,  rgba(214,0,95,.18)  0%, transparent 38%),
     linear-gradient(rgba(238,237,235,.82), rgba(238,237,235,.82)),
-    url('images/Tarima_concierto.webp') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1600&auto=format&fit=crop&q=70') center/cover no-repeat;
 }
 
 /* Luces blancas tipo spotlights — ocultas en modo foto clara */
@@ -856,6 +856,14 @@ a.contact-info-val:hover { color:var(--orange); }
   .hero-form-card { padding:26px 26px 22px; }
 }
 @media (max-width:900px) {
+  /* Imagen hero más pequeña en mobile: ~50% menos peso */
+  .hero {
+    background-image:
+      radial-gradient(ellipse at 8% 92%,  rgba(255,82,0,.22)  0%, transparent 42%),
+      radial-gradient(ellipse at 92% 8%,  rgba(214,0,95,.18)  0%, transparent 38%),
+      linear-gradient(rgba(238,237,235,.82), rgba(238,237,235,.82)),
+      url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=800&auto=format&fit=crop&q=65');
+  }
   .nav-links, .nav-phone { display:none; }
   /* Navbar mobile: hamburger | logo centrado | cotizar */
   .navbar { height:64px; }
