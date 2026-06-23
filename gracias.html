@@ -8,15 +8,18 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
   <style>
     :root {
       --orange:#FF5200;
       --magenta:#D6005F;
       --deep:#0c0c0e;
       --surface:#131316;
-      --card:#18181c;
       --white:#F8F6F0;
       --muted:rgba(248,246,240,.58);
       --grad:linear-gradient(90deg,var(--orange) 0%,var(--magenta) 100%);
@@ -36,20 +39,17 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      padding:40px 5%;
+      padding:48px 5%;
       position:relative;
-      overflow:hidden;
     }
 
-    /* Orbs de fondo igual que el hero */
     .orb {
-      position:absolute;
+      position:fixed;
       border-radius:50%;
       pointer-events:none;
-      filter:blur(0px);
     }
-    .orb-1 { width:600px; height:600px; top:-10%; right:-8%;  background:radial-gradient(circle,rgba(214,0,95,.18) 0%,transparent 65%); }
-    .orb-2 { width:500px; height:500px; bottom:-10%; left:-8%; background:radial-gradient(circle,rgba(255,82,0,.22) 0%,transparent 65%); }
+    .orb-1 { width:600px; height:600px; top:-10%; right:-8%;  background:radial-gradient(circle,rgba(214,0,95,.15) 0%,transparent 65%); }
+    .orb-2 { width:500px; height:500px; bottom:-10%; left:-8%; background:radial-gradient(circle,rgba(255,82,0,.18) 0%,transparent 65%); }
 
     .card {
       position:relative;
@@ -65,14 +65,12 @@
       text-align:center;
     }
 
-    .check-icon {
-      width:64px; height:64px;
-      background:var(--grad);
-      border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      margin:0 auto 24px;
-      font-size:1.6rem;
-      color:#fff;
+    .logo-top {
+      margin:0 auto 28px;
+    }
+    .logo-top img {
+      height:72px;
+      width:auto;
     }
 
     .eyebrow {
@@ -163,13 +161,6 @@
     }
     .btn-back:hover { color:var(--white); }
 
-    .logo-wrap {
-      position:absolute;
-      top:28px; left:50%;
-      transform:translateX(-50%);
-    }
-    .logo-wrap img { height:44px; }
-
     @media (max-width:540px) {
       .card { padding:36px 24px 32px; }
     }
@@ -180,12 +171,12 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
 
-  <div class="logo-wrap">
-    <a href="index.html"><img src="logo.png" alt="Damer Producciones"></a>
-  </div>
-
   <div class="card">
-    <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+    <div class="logo-top">
+      <a href="index.html">
+        <img src="logo.png" alt="Damer Producciones" width="72" height="72">
+      </a>
+    </div>
 
     <span class="eyebrow">Solicitud enviada</span>
     <h1>¡Todo listo,<br><span class="cliente-nombre" id="clienteNombre">amigo</span>!</h1>
@@ -193,7 +184,7 @@
     <p class="desc">
       Recibimos tu solicitud de cotización. En menos de
       <strong>24 horas</strong> uno de nuestros asesores se pone en contacto contigo.<br><br>
-      Si prefieres hablar ahora mismo, escríbenos por WhatsApp y llevamos toda la información lista.
+      Si prefieres hablar ahora mismo, escríbenos directo por WhatsApp.
     </p>
 
     <div class="info-box" id="infoBox" style="display:none;">
