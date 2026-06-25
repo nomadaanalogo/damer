@@ -953,3 +953,19 @@ a.contact-info-val:hover { color:var(--orange); }
   .footer-bottom { flex-direction:column; text-align:center; }
   .btn-white,.btn-white-ghost { width:100%; justify-content:center; }
 }
+
+/* ══════════════════════════════
+   TEXTOS DESKTOP — ligeramente más grandes
+══════════════════════════════ */
+@media (min-width:901px) {
+  .hero-sub          { font-size:1.18rem; }
+  .services-lead     { font-size:1.11rem; }
+  .svc-desc          { font-size:1.01rem; }
+  .db-text           { font-size:1.06rem; }
+  .cob-lead          { font-size:1.06rem; }
+  .process-desc      { font-size:.99rem; }
+  .testi-text        { font-size:1.03rem; }
+  .contact-info-val  { font-size:1.06rem; }
+  .footer-brand p    { font-size:.99rem; }
+  .footer-links-col a{ font-size:1.01rem; }
+}
