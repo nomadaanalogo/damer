@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ═══ GOOGLE ANALYTICS ═══ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9PPQT1CYG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G9PPQT1CYG');
+</script>
+
 <!-- ═══ SEO PRIMARIO ═══ -->
 <title>Alquiler de Sonido, Luces, Tarimas y Pantallas LED para Eventos en Cali | Damer Producciones</title>
 <meta name="description" content="Producción y renta de sonido, luces, tarimas y pantallas LED profesionales en Cali y Valle del Cauca. Bodas, conciertos, BTL corporativo y quinceañeras. Cotización gratis · Respuesta en 24 horas.">
@@ -777,5 +786,35 @@
 </footer>
 
 <script src="script.js" defer></script>
+
+<!-- ═══ AVISO DE COOKIES ═══ -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <i class="fa-solid fa-cookie-bite"></i>
+      <p>Usamos cookies propias y de terceros (Google Analytics) para mejorar tu experiencia y analizar el tráfico. Al continuar navegando aceptas su uso. Consulta nuestra <a href="tratamiento-datos.html">política de privacidad</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn-accept" id="cookieAccept">Aceptar</button>
+      <button class="cookie-btn-reject" id="cookieReject">Rechazar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  if(localStorage.getItem('cookieConsent')) return;
+  var b = document.getElementById('cookieBanner');
+  b.classList.add('cookie-visible');
+  document.getElementById('cookieAccept').addEventListener('click', function(){
+    localStorage.setItem('cookieConsent','accepted');
+    b.classList.remove('cookie-visible');
+  });
+  document.getElementById('cookieReject').addEventListener('click', function(){
+    localStorage.setItem('cookieConsent','rejected');
+    b.classList.remove('cookie-visible');
+  });
+})();
+</script>
 </body>
 </html>

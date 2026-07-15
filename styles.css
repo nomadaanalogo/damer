@@ -955,6 +955,46 @@ a.contact-info-val:hover { color:var(--orange); }
 }
 
 /* ══════════════════════════════
+   AVISO DE COOKIES
+══════════════════════════════ */
+.cookie-banner {
+  position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:var(--surface); border-top:2px solid var(--orange);
+  padding:16px 5%; transform:translateY(100%);
+  transition:transform .4s ease; box-shadow:0 -4px 24px rgba(0,0,0,.4);
+}
+.cookie-banner.cookie-visible { transform:translateY(0); }
+.cookie-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; flex-wrap:wrap; max-width:1400px; margin:0 auto;
+}
+.cookie-text {
+  display:flex; align-items:flex-start; gap:12px; flex:1; min-width:260px;
+}
+.cookie-text i { color:var(--orange); font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+.cookie-text p { font-family:var(--mono); font-size:.62rem; letter-spacing:.06em; line-height:1.7; color:var(--muted); }
+.cookie-text a { color:var(--orange); text-decoration:underline; }
+.cookie-actions { display:flex; gap:8px; flex-shrink:0; }
+.cookie-btn-accept {
+  padding:9px 22px; background:var(--grad); border:none; color:#fff;
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.12em;
+  text-transform:uppercase; cursor:pointer; transition:filter .3s;
+}
+.cookie-btn-accept:hover { filter:brightness(1.1); }
+.cookie-btn-reject {
+  padding:9px 18px; background:none;
+  border:1px solid rgba(255,255,255,.18); color:var(--muted);
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.12em;
+  text-transform:uppercase; cursor:pointer; transition:border-color .3s,color .3s;
+}
+.cookie-btn-reject:hover { border-color:var(--white); color:var(--white); }
+@media (max-width:600px) {
+  .cookie-inner { flex-direction:column; gap:14px; }
+  .cookie-actions { width:100%; }
+  .cookie-btn-accept,.cookie-btn-reject { flex:1; text-align:center; }
+}
+
+/* ══════════════════════════════
    TEXTOS DESKTOP — ligeramente más grandes
 ══════════════════════════════ */
 @media (min-width:901px) {
