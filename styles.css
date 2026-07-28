@@ -1071,21 +1071,23 @@ a.contact-info-val:hover { color:var(--orange); }
    BOTÓN FLOTANTE WHATSAPP
 ══════════════════════════════ */
 .wa-float {
-  position:fixed; bottom:28px; right:28px; z-index:9998;
+  position:fixed; bottom:28px; right:28px; z-index:10000;
   width:58px; height:58px; border-radius:50%;
   background:#25D366;
   display:flex; align-items:center; justify-content:center;
   font-size:1.75rem; color:#fff;
   text-decoration:none;
   box-shadow:0 4px 20px rgba(37,211,102,.45);
-  transition:transform .25s, box-shadow .25s;
+  transition:transform .25s, box-shadow .25s, bottom .35s ease;
 }
 .wa-float:hover {
   transform:scale(1.1);
   box-shadow:0 6px 28px rgba(37,211,102,.6);
 }
+.wa-float.wa-up { bottom:110px; }
 @media (max-width:600px) {
   .wa-float { bottom:80px; right:18px; width:52px; height:52px; font-size:1.5rem; }
+  .wa-float.wa-up { bottom:160px; }
 }
 
 /* ══════════════════════════════

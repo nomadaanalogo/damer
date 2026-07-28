@@ -983,16 +983,20 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
 
 <script>
 (function(){
-  if(localStorage.getItem('cookieConsent')) return;
   var b = document.getElementById('cookieBanner');
+  var wa = document.querySelector('.wa-float');
+  if(localStorage.getItem('cookieConsent')) return;
   b.classList.add('cookie-visible');
-  document.getElementById('cookieAccept').addEventListener('click', function(){
-    localStorage.setItem('cookieConsent','accepted');
+  if(wa) wa.classList.add('wa-up');
+  function dismiss(){
     b.classList.remove('cookie-visible');
+    if(wa) wa.classList.remove('wa-up');
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function(){
+    localStorage.setItem('cookieConsent','accepted'); dismiss();
   });
   document.getElementById('cookieReject').addEventListener('click', function(){
-    localStorage.setItem('cookieConsent','rejected');
-    b.classList.remove('cookie-visible');
+    localStorage.setItem('cookieConsent','rejected'); dismiss();
   });
 })();
 </script>
