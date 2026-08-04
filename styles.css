@@ -279,7 +279,7 @@ body { background:var(--deep); color:var(--white); font-family:var(--body); font
 /* Step 3 — campos dentro del hero form card */
 .hf-panel .form-field { margin-bottom:9px; }
 .hf-panel .form-field textarea { min-height:62px; }
-.hf-panel .form-field label { color:rgba(0,0,0,.6); }
+.hf-panel .form-field label { color:rgba(0,0,0,.85); font-weight:700; }
 .hf-panel .form-field input,
 .hf-panel .form-field textarea {
   background:transparent;
@@ -306,7 +306,7 @@ body { background:var(--deep); color:var(--white); font-family:var(--body); font
 .hf-pref-lbl {
   font-family:var(--mono); font-size:.56rem;
   letter-spacing:.12em; text-transform:uppercase;
-  color:rgba(0,0,0,.55); display:block; margin-bottom:7px;
+  color:rgba(0,0,0,.8); font-weight:700; display:block; margin-bottom:7px;
 }
 .hf-pref-opts { display:flex; gap:8px; }
 .hf-radio {
