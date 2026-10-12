@@ -127,9 +127,22 @@ hfNext.addEventListener('click', () => {
   if (hfStep < 4) hfGoTo(hfStep + 1);
 });
 
+// Teléfono obligatorio: al menos 7 dígitos
+function hfCheckPhone(input) {
+  const ok = input.value.replace(/\D/g, '').length >= 7;
+  input.setCustomValidity(ok ? '' : 'Ingresa tu número de teléfono para poder contactarte.');
+  if (!ok) { input.reportValidity(); input.focus(); }
+  return ok;
+}
+['hfPhone', 'hf2Phone'].forEach(id => {
+  document.getElementById(id)?.addEventListener('input', e => e.target.setCustomValidity(''));
+});
+
 hfSendB.addEventListener('click', () => {
+  const phoneEl = document.getElementById('hfPhone');
+  if (!hfCheckPhone(phoneEl)) return;
   const nombre = document.getElementById('hfName').value  || 'Sin nombre';
-  const tel    = document.getElementById('hfPhone').value || 'No indicado';
+  const tel    = phoneEl.value.trim();
   const email  = document.getElementById('hfEmail').value || 'No indicado';
   const desc   = document.getElementById('hfDesc').value  || '';
   const lugar  = document.getElementById('hfPlace').value || 'No indicado';
@@ -217,8 +230,10 @@ document.querySelectorAll('.hf2-cat').forEach(btn => {
 if (hf2Back) hf2Back.addEventListener('click', () => { hf2Step--; hf2Render(); });
 if (hf2Next) hf2Next.addEventListener('click', () => { if (hf2Step === 2 && !hf2Sub) return; if (hf2Step < 4) { hf2Step++; hf2Render(); } });
 if (hf2SendB) hf2SendB.addEventListener('click', () => {
+  const phoneEl = document.getElementById('hf2Phone');
+  if (!hfCheckPhone(phoneEl)) return;
   const nombre = document.getElementById('hf2Name').value  || 'Sin nombre';
-  const tel    = document.getElementById('hf2Phone').value || 'No indicado';
+  const tel    = phoneEl.value.trim();
   const email  = document.getElementById('hf2Email').value || 'No indicado';
   const desc   = document.getElementById('hf2Desc').value  || '';
   const lugar  = document.getElementById('hf2Place').value || 'No indicado';
