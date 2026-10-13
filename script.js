@@ -10,6 +10,32 @@ function enviarASheet(data) {
   }).catch(() => {});
 }
 
+// ─── GOOGLE ANALYTICS: EVENTOS ───
+function gaEvent(name, params = {}) {
+  if (typeof gtag === 'function') gtag('event', name, params);
+}
+
+// Clic en cualquier enlace de WhatsApp (flotante, botones, footer)
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href*="wa.me"]');
+  if (!a) return;
+  const ubicacion = a.classList.contains('wa-float') ? 'boton_flotante'
+                  : a.classList.contains('social-btn') ? 'redes'
+                  : a.classList.contains('btn-grad') ? 'navbar'
+                  : 'cta';
+  gaEvent('whatsapp_click', { ubicacion, pagina: location.pathname, transport_type: 'beacon' });
+});
+
+// Envío del formulario de cotización: espera a GA (máx 1 s) antes de redirigir
+function gaLeadThenGo(url, params) {
+  let done = false;
+  const go = () => { if (!done) { done = true; window.location.href = url; } };
+  if (typeof gtag === 'function') {
+    gtag('event', 'generate_lead', { ...params, pagina: location.pathname, transport_type: 'beacon', event_callback: go });
+    setTimeout(go, 1000);
+  } else go();
+}
+
 // ─── NAVBAR SCROLL ───
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 60), { passive: true });
@@ -165,7 +191,7 @@ hfSendB.addEventListener('click', () => {
   const hp          = document.getElementById('hfHp')?.value || '';
   const sheetParams = new URLSearchParams({ origen:'Hero', nombre, tel, email, evento, desc, lugar, fecha, pref, hp });
   const graciasUrl  = `gracias.html?wa=${encodeURIComponent('https://wa.me/573014734572?text=' + waText)}&${sheetParams.toString()}`;
-  window.location.href = graciasUrl;
+  gaLeadThenGo(graciasUrl, { formulario: 'hero', evento, contacto_preferido: pref });
 });
 
 hfRender();
@@ -250,7 +276,7 @@ if (hf2SendB) hf2SendB.addEventListener('click', () => {
   const hp          = document.getElementById('hf2Hp')?.value || '';
   const sheetParams = new URLSearchParams({ origen:'Contacto', nombre, tel, email, evento, desc, lugar, fecha, pref, hp });
   const graciasUrl  = `gracias.html?wa=${encodeURIComponent('https://wa.me/573014734572?text=' + waText)}&${sheetParams.toString()}`;
-  window.location.href = graciasUrl;
+  gaLeadThenGo(graciasUrl, { formulario: 'contacto', evento, contacto_preferido: pref });
 });
 
 hf2Render();
